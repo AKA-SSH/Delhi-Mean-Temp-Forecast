@@ -13,7 +13,8 @@ xgboost
 catboost
 lightgbm
 scikit-learn
-# Time Series Forecasting
+# Auto-Tuning
+optuna
 pmdarima
 # Notebook
 jupyter
