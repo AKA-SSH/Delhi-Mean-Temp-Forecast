@@ -1,0 +1,23 @@
+# Core Libraries
+numpy
+pandas
+pyarrow
+# Data Representation
+seaborn
+tabulate
+matplotlib
+# Statistical Analysis and Modeling
+statsmodels
+# Machine Learning
+xgboost
+catboost
+lightgbm
+scikit-learn
+# Time Series Forecasting
+pmdarima
+# Notebook
+jupyter
+# Deployment
+streamlit
+# editable installation in current directory
+-e .
