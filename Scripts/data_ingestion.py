@@ -7,6 +7,7 @@ from utils.pickle_file import pickle_file
 
 from Scripts.feature_engineering import FeatureEngineering
 from Scripts.model_training import ModelTrainer
+from Scripts.model_evaluation import EvaluateModel
 
 class DataIngestion:
     def __init__(self) -> None:
@@ -72,4 +73,9 @@ if __name__ == '__main__':
     logging.info('Performing model training...')
     training_object = ModelTrainer()
     training_object.train_model(train_data_file_path='artifacts\\engineered_train_data.pkl', test_data_file_path='artifacts\engineered_test_data.pkl')
-    
+
+    # Model Evaluation
+    logging.info('Evaluating trained model...')
+    model_evaluation_object= EvaluateModel()
+    message= model_evaluation_object.model_evaluation(test_features_file_path='artifacts\\test_features.pkl', test_target_file_path='artifacts\\test_target.pkl', model_file_path='artifacts\\model.pkl')
+    print(message)
