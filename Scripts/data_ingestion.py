@@ -5,6 +5,8 @@ from utils.logger import logging
 from utils.exception import CustomException
 from utils.pickle_file import pickle_file
 
+from Scripts.feature_engineering import FeatureEngineering
+
 class DataIngestion:
     def __init__(self) -> None:
         pass
@@ -59,3 +61,9 @@ if __name__ == '__main__':
     logging.info('Performing data ingestion...')
     data_ingestion_object = DataIngestion()
     data_ingestion_object.data_ingestion()
+
+    # Feature Engineering
+    logging.info('Performing feature engineering...')
+    feature_engineering_object = FeatureEngineering()
+    feature_engineering_object.engineer_feature(train_data_file_path='artifacts\\train_data.pkl', test_data_file_path='artifacts\\test_data.pkl')
+    
