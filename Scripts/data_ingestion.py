@@ -6,6 +6,7 @@ from utils.exception import CustomException
 from utils.pickle_file import pickle_file
 
 from Scripts.feature_engineering import FeatureEngineering
+from Scripts.model_training import ModelTrainer
 
 class DataIngestion:
     def __init__(self) -> None:
@@ -66,4 +67,9 @@ if __name__ == '__main__':
     logging.info('Performing feature engineering...')
     feature_engineering_object = FeatureEngineering()
     feature_engineering_object.engineer_feature(train_data_file_path='artifacts\\train_data.pkl', test_data_file_path='artifacts\\test_data.pkl')
+
+    # Model Training
+    logging.info('Performing model training...')
+    training_object = ModelTrainer()
+    training_object.train_model(train_data_file_path='artifacts\\engineered_train_data.pkl', test_data_file_path='artifacts\engineered_test_data.pkl')
     
