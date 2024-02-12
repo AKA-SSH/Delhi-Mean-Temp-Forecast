@@ -123,6 +123,7 @@ celerybeat.pid
 notebook_artifacts/
 artifacts/
 Data/
+catboost_info/
 
 # Environments
 .env
