@@ -22,5 +22,5 @@ setup (name='time-series',
       long_description=long_description_content,
       long_description_content_type='text/markdown',
       packages=find_packages(),
-      install_requires=read_file('Environment\\requirements.txt'),
+      install_requires=read_file('requirements.txt'),
       python_requires='>=3.8')
