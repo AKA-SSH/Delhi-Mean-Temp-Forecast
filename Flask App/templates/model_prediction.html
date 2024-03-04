@@ -1,0 +1,57 @@
+<!-- templates/model_prediction.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Prediction</title>
+    <style>
+        /* Add your CSS styling here */
+        /* You can modify or add styles as needed */
+    </style>
+</head>
+<body>
+    <h1>Model Prediction</h1>
+    <a href="/">Home</a>
+    
+    <!-- File Upload Form -->
+    <form action="/model_prediction" method="post" enctype="multipart/form-data">
+        <label for="file">Upload a CSV file:</label><br>
+        <input type="file" id="file" name="file" accept=".csv"><br><br>
+        <input type="submit" value="Upload and Predict">
+    </form>
+    
+    <!-- Display prediction content -->
+    {% if prediction_html is defined %}
+    <hr>
+    <h2>Predictions:</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <!-- Define table headers based on the prediction data -->
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <!-- Add more table headers as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in prediction_data %}
+                <tr>
+                    <!-- Display prediction values in table cells -->
+                    <td>{{ row.column1 }}</td>
+                    <td>{{ row.column2 }}</td>
+                    <!-- Add more table cells as needed -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <hr>
+    <!-- Download Processed Data CSV File -->
+    <h3>Download Processed Data CSV File:</h3>
+    <a href="data:file/csv;base64,{{ csv_file_prediction }}" download="prediction_data.csv">Download CSV</a>
+    {% endif %}
+</body>
+</html>

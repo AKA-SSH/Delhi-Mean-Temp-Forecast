@@ -1,0 +1,25 @@
+<!-- templates/model_training.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Training</title>
+</head>
+<body>
+    <h1>Model Training</h1>
+    <a href="/">Home</a>
+
+    <form action="/train_model" method="post" enctype="multipart/form-data">
+        <label for="file">Upload a CSV file:</label><br>
+        <input type="file" id="file" name="file" accept=".csv"><br><br>
+        <input type="submit" value="Train Model">
+    </form>
+    
+    {% if trained_model_link %}
+    <hr>
+    <h3>Download Trained Model:</h3>
+    {{ trained_model_link | safe }}
+    {% endif %}
+</body>
+</html>
